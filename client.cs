@@ -12,7 +12,7 @@ public class LuaExecutor : MonoBehaviour
 
     void Start()
     {
-        lua = new LuaState(); // Khởi tạo LuaState
+        lua = new LuaState(); 
         runButton.onClick.AddListener(ExecuteLuaCode);
     }
 
@@ -21,7 +21,7 @@ public class LuaExecutor : MonoBehaviour
         string luaCode = luaInputField.text;
         try
         {
-            lua.DoString(luaCode); // Thực thi mã Lua
+            lua.DoString(luaCode); 
             var result = lua.GetGlobal("result");
             outputText.text = $"Output: {result}";
         }
